@@ -1,26 +1,26 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
-int main() {
-    char str[100];
-    int i = 0, valid = 1;
-    cin >> str;
+bool isNum() {
+    string c;
+    cout << "Enter input: ";
+    cin >> c;
 
-    if (!((str[0] >= 'A' && str[0] <= 'Z') || (str[0] >= 'a' && str[0] <= 'z') || str[0] == '_'))
-        valid = 0;
-    else {
-        for (i = 1; str[i] != '\0'; i++) {
-            if (!((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z') || (str[i] >= '0' && str[i] <= '9') || str[i] == '_')) {
-                valid = 0;
-                break;
-            }
-        }
+    for (int i = 0; i < c.length(); i++) {
+        if (c[i] >= '0' && c[i] <= '9')
+            continue;
+        else
+            return false;
     }
+    return true;
+}
 
-    if (valid)
-        cout << "Identifier";
+int main() {
+    if (isNum())
+        cout << "Numeric constant" << endl;
     else
-        cout << "Not Identifier";
+        cout << "Not numeric" << endl;
 
     return 0;
 }
