@@ -1,0 +1,15 @@
+hello
+int
+_var123
+9start
+double
+my variable
+Good_Name
+_const
+name1
+space test
+_A
+float
+__ok
+Test123
+bad-name
